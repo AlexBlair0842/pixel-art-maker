@@ -7,19 +7,19 @@ sizePicker.addEventListener("submit", function (event) {
     var widthElement = document.getElementById("inputWidth");
     var height = heightElement.value;
     var width = widthElement.value;
-    makeGrid(height, width);
+    makeGrid(width, height);
 })
-function makeGrid(h, w) {
+function makeGrid(w, h) {
 // create pixel block
   var table = document.querySelector("#pixelCanvas");
-  for (var i = 1; i <= h; i++) {
+  for (var i = 0; i <= h; i++) {
       table.insertAdjacentHTML("afterbegin", "<tr id = table" + i + "></tr>");
       var line = document.querySelector("#table" + i);
       for (var j = 1; j <= w; j++) {
           line.insertAdjacentHTML("afterbegin","<td id = cell" + i + j +"></td>");
           // Resets Table
 
-              var x = 1;
+              var x = 0;
               var t = "table" + x;
               var row = document.getElementById(t);
               while (row !== null) {
